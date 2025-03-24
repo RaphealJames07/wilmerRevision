@@ -1,8 +1,8 @@
 import {RouterProvider, createBrowserRouter} from "react-router-dom";
 
 import ErrorPage from "./components/ErrorPage";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
+import Register from "./pages/auth/Register";
+import Login from "./pages/auth/Login";
 import AppStructure from "./components/AppStructure";
 import Cart from "./pages/cart/Cart";
 import HomeStructure from "./pages/home/HomeStructure";
@@ -20,7 +20,9 @@ import Products from "./pages/products/Products";
 import Checkout from "./pages/checkout/Checkout";
 import PaymentVerify from "./pages/checkout/PaymentVerify";
 import PrivateRoute from "./routes/PrivateRoute";
-import Verify from "./pages/Verify";
+import Verify from "./pages/auth/Verify";
+import ForgetPassword from "./pages/auth/ForgetPassword";
+import ResetPassword from "./pages/auth/ResetPassword";
 
 const App = () => {
     const router = createBrowserRouter([
@@ -106,6 +108,16 @@ const App = () => {
             path: "/login",
             errorElement: <ErrorPage />,
             element: <Login />,
+        },
+        {
+            path: "/forget-password",
+            errorElement: <ErrorPage />,
+            element: <ForgetPassword />,
+        },
+        {
+            path: "/reset-password/:token",
+            errorElement: <ErrorPage />,
+            element: <ResetPassword />,
         },
         {
             path: "/verify/:token",

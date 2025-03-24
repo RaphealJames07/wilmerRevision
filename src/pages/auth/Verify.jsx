@@ -1,5 +1,5 @@
 import {useNavigate, useParams} from "react-router";
-import {BASE_URL} from "../constants/constants";
+import {BASE_URL} from "../../constants/constants";
 import axios from "axios";
 import {useEffect, useState} from "react";
 const Verify = () => {

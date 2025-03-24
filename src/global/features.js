@@ -10,7 +10,7 @@ const features = createSlice({
     initialState,
     reducers: {
         userData: (state, {payload}) => {
-            state.user = payload;
+            state.user = payload.user;
             console.log("User Data:", payload);
         },
 
