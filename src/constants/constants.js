@@ -1,0 +1,1 @@
+export const BASE_URL = "https://cohort-5-revision-backend.up.railway.app"

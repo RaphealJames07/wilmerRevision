@@ -1,70 +1,123 @@
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Login from "./auth/Login";
-import Home from "./pages/Home";
-import Signin from "./auth/Signin";
-import Verify from "./auth/Verify";
-import HomeRoute from "./routes/HomeRoute";
-import ProductDetailPage from "./pages/ProductDetailPage";
-import Shop from "./pages/Shop";
-import Profile from "./pages/Profile";
-import Favorites from "./pages/Favorites";
-import Collections from "./pages/Collections";
-import About from "./pages/About";
+import {RouterProvider, createBrowserRouter} from "react-router-dom";
+
+import ErrorPage from "./components/ErrorPage";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import AppStructure from "./components/AppStructure";
+import Cart from "./pages/cart/Cart";
+import HomeStructure from "./pages/home/HomeStructure";
+import DynamicCollectionsHome from "./pages/collections/DynamicCollectionsHome";
+import Profile from "./pages/profile/Profile";
+import MyOrders from "./pages/profile/MyOrders";
+import Wishlist from "./pages/Wishlist";
+import Search from "./pages/Search";
+import DeliveryAddress from "./pages/profile/DeliveryAddress";
+import LoyaltyProgramm from "./pages/profile/LoyaltyProgramm";
+import GiftCards from "./pages/profile/GiftCards";
+import OrderHistoryInfo from "./pages/profile/OrderHistoryInfo";
+import UserProfile from "./pages/profile/UserProfile";
+import Products from "./pages/products/Products";
+import Checkout from "./pages/checkout/Checkout";
+import PaymentVerify from "./pages/checkout/PaymentVerify";
+import PrivateRoute from "./routes/PrivateRoute";
+import Verify from "./pages/Verify";
+
 const App = () => {
-    const routes = createBrowserRouter([
+    const router = createBrowserRouter([
         {
             path: "",
-            element: <HomeRoute />,
+            errorElement: <ErrorPage />,
+            element: <AppStructure />,
             children: [
                 {
                     path: "",
-                    element: <Home />,
+                    element: <HomeStructure />,
                 },
                 {
-                    path: "/cart",
-                    element: <Home />,
+                    path: "cart",
+                    element: <Cart />,
                 },
                 {
-                    path: "/collections",
-                    element: <Collections />,
+                    path: "checkout",
+                    element: <Checkout />,
                 },
                 {
-                    path: "/about",
-                    element: <About />,
+                    path: "payment-verify",
+                    element: <PaymentVerify />,
                 },
                 {
-                    path: "/shop",
-                    element: <Shop />,
+                    path: "wishlist",
+                    element: <Wishlist />,
                 },
                 {
-                    path: "/profile",
-                    element: <Profile />,
+                    path: "search/:q?",
+                    element: <Search />,
                 },
                 {
-                    path: "/favorites",
-                    element: <Favorites />,
+                    path: "collections/:slug",
+                    element: <DynamicCollectionsHome />,
                 },
                 {
-                    path: "/product-detail/:id",
-                    element: <ProductDetailPage />,
+                    path: "my-order/:slug",
+                    element: <OrderHistoryInfo />,
+                },
+                {
+                    path: "products/:slug",
+                    element: <Products />,
+                },
+                {
+                    path: "account",
+                    element: (
+                        <PrivateRoute>
+                            <Profile />
+                        </PrivateRoute>
+                    ),
+                    children: [
+                        {
+                            path: "my-orders",
+                            element: <MyOrders />,
+                        },
+                        {
+                            path: "user-profile",
+                            element: <UserProfile />,
+                        },
+                        {
+                            path: "my-delivery-address",
+                            element: <DeliveryAddress />,
+                        },
+                        {
+                            path: "loyalty-program",
+                            element: <LoyaltyProgramm />,
+                        },
+                        {
+                            path: "gift-card",
+                            element: <GiftCards />,
+                        },
+                    ],
                 },
             ],
         },
         {
-            path: "/verify",
-            element: <Verify />,
+            path: "/register",
+            errorElement: <ErrorPage />,
+            element: <Register />,
         },
         {
             path: "/login",
+            errorElement: <ErrorPage />,
             element: <Login />,
         },
         {
-            path: "/signup",
-            element: <Signin />,
+            path: "/verify/:token",
+            errorElement: <ErrorPage />,
+            element: <Verify />,
         },
     ]);
-
-    return <RouterProvider router={routes} />;
+    return (
+        <>
+            <RouterProvider router={router} />
+        </>
+    );
 };
 
 export default App;

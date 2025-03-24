@@ -1,7 +1,51 @@
 @import "tailwindcss";
 
-.verifyBgImg{
-  background-image: url(./assets/public/verifyBg.jpg);
-  object-fit: fill;
-  background-size: cover;
+.root,
+#root,
+#docs-root {
+  --curve-primary-color: #ffb703;
+  --curve-primary-light-color: #fff1cd;
+  --curve-secondary-color: #023047;
+  --curve-primary-text: #34393c;
+  --curve-bg-light-grey: #ECEDEF;
 }
+
+
+.herobg{
+  background-image: url('./assets/herobg1.webp' );
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .herobgsm{
+    background-image: url('./assets/herobgsm.webp' );
+   background-size: cover;
+  }
+}
+
+.transformHere{
+  cursor: grab;
+  margin-inline: auto;
+}
+
+.owl-stage{
+  padding-left: 0px !important;
+}
+
+.styles_MetaCard{
+  background: linear-gradient(1turn,rgba(8,8,8,.6),rgba(8,8,8,.35) 29.03%,rgba(8,8,8,0) 43.73%,rgba(8,8,8,0));
+}
+
+.ant-collapse-header-text{
+  color: white;
+}
+
+.ant-collapse-item-active{
+  background-color: white;
+}
+.ant-drawer-body{
+  padding: 0 !important;
+}
+

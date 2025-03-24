@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Air Jordan 4 Retro Military Blue (2024)",
+    "price": 180.0,
+    "brand": "Nike",
+    "image": "MilitaryBlue"
+  },
+  {
+    "name": "Air Jordan 4 Sail Metallic Gold",
+    "price": 180.0,
+    "brand": "Nike",
+    "image": "SailMetallicGold"
+  },
+  {
+    "name":"Air Jordan 4 Midnight Navy",
+    "price": 180.0,
+    "brand": "Nike",
+    "image":"MidnightNavy"
+  },
+  {
+    "name":"Air Jordan 4 Red Cement",
+    "price": 180.0,
+    "brand": "Nike",
+    "image":"RedCement"
+  },
+  {
+    "name":"Air Jordan 4 Vivid Sulfur",
+    "price": 180.0,
+    "brand": "Nike",
+    "image":"VividSulfur"
+  },
+  {
+    "name":"Air Jordan 4 Retro Bred Reimagined",
+    "price": 180.0,
+    "brand": "Nike",
+    "image":"RetroBredReimagined"
+  }
+]

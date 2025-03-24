@@ -1,0 +1,305 @@
+[
+    {
+        "name": "sneakers",
+        "slug": "all-sneaker",
+        "brand": [
+            {
+                "name": "Nike",
+                "slug": "nike",
+                "image": "nikeImg",
+                "family": [
+                    {
+                        "name": "Nike Air Force 1",
+                        "slug": "nike-air-force-1",
+                        "image": "nikeAF1",
+                        "types": [
+                            {
+                                "name": "Low",
+                                "slug": "nike-air-force-1-low",
+                                "image": "nikeAF1Low"
+                            },
+                            {
+                                "name": "Low Pixel",
+                                "slug": "nike-air-force-1-low-pixel",
+                                "image": "nikeAF1LowPX"
+                            },
+                            {
+                                "name": "Shadow",
+                                "slug": "nike-air-force-1-shadow",
+                                "image": "nikeAF1Shadow"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nike Dunk",
+                        "slug": "nike-dunk",
+                        "image": "nikeDK1",
+                        "types": [
+                            {
+                                "name": "Low",
+                                "slug": "nike-dunk-low",
+                                "image": "nikeDKLow"
+                            },
+                            {
+                                "name": "SB",
+                                "slug": "nike-dunk-sb",
+                                "image": "nikeDKSB"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nike x Travis Scott",
+                        "slug": "nike-x-travis-scott",
+                        "image": "nikexTS"
+                    },
+                    {
+                        "name": "Nike x Supreme",
+                        "slug": "nike-x-supreme",
+                        "image": "nikexSP"
+                    },
+                    {
+                        "name": "Nike x Cortez",
+                        "slug": "nike-x-cortez",
+                        "image": "nikexCTz"
+                    }
+                ]
+            },
+            {
+                "name": "Adidas",
+                "slug": "adidas",
+                "image": "adidasImg",
+                "family": [
+                    {
+                        "name": "Adidas Campus",
+                        "slug": "adidas-campus",
+                        "image": "adidasCP"
+                    },
+                    {
+                        "name": "Adidas Samba",
+                        "slug": "adidas-samba",
+                        "image": "adidasSB"
+                    },
+                    {
+                        "name": "Adidas Gazelle",
+                        "slug": "adidas-gazelle",
+                        "image": "adidasGZ"
+                    }
+                ]
+            },
+            {
+                "name": "New Balance",
+                "slug": "new-balance",
+                "image": "newBalanceImg",
+                "family": [
+                    {
+                        "name": "New Balance 550",
+                        "slug": "new-balance-550",
+                        "image": "NB550"
+                    },
+                    {
+                        "name": "New Balance 2002R",
+                        "slug": "new-balance-2002r",
+                        "image": "NB2002R"
+                    },
+                    {
+                        "name": "New Balance 9060",
+                        "slug": "new-balance-9060",
+                        "image": "NB9060"
+                    }
+                ]
+            },
+            {
+                "name": "Air Jordan",
+                "slug": "air-jordan",
+                "image": "airjordanImg",
+                "family": [
+                    {
+                        "name": "Air Jordan 1",
+                        "slug": "air-jordan-1",
+                        "image": "AJ1",
+                        "types": [
+                            {
+                                "name": "Low",
+                                "slug": "air-jordan-1-low",
+                                "image": "AJ1Low"
+                            },
+                            {
+                                "name": "Mid",
+                                "slug": "air-jordan-1-mid",
+                                "image": "AJ1Mid"
+                            },
+                            {
+                                "name": "High",
+                                "slug": "air-jordan-1-high",
+                                "image": "AJ1High"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Air Jordan 2",
+                        "slug": "air-jordan-2",
+                        "image": "AJ2"
+                    },
+                    {
+                        "name": "Air Jordan 3",
+                        "slug": "air-jordan-3",
+                        "image": "AJ3"
+                    }
+                ]
+            }
+        ],
+        "image": "sneakerImg"
+    },
+    {
+        "name": "shoes",
+        "brand": [
+            {
+                "name": "Nike",
+                "slug": "nike",
+                "image": "nikeImg",
+                "family": [
+                    {
+                        "name": "Nike Air Force 1",
+                        "slug": "nike-air-force-1",
+                        "image": "nikeAF1",
+                        "types": [
+                            {
+                                "name": "Low",
+                                "slug": "nike-air-force-1-low",
+                                "image": "nikeAF1Low"
+                            },
+                            {
+                                "name": "Low Pixel",
+                                "slug": "nike-air-force-1-low-pixel",
+                                "image": "nikeAF1LowPX"
+                            },
+                            {
+                                "name": "Shadow",
+                                "slug": "nike-air-force-1-shadow",
+                                "image": "nikeAF1Shadow"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nike Dunk",
+                        "slug": "nike-dunk",
+                        "image": "nikeDK1",
+                        "types": [
+                            {
+                                "name": "Low",
+                                "slug": "nike-dunk-low",
+                                "image": "nikeDKLow"
+                            },
+                            {
+                                "name": "SB",
+                                "slug": "nike-dunk-sb",
+                                "image": "nikeDKSB"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nike x Travis Scott",
+                        "slug": "nike-x-travis-scott",
+                        "image": "nikexTS"
+                    }
+                ]
+            },
+            {
+                "name": "Adidas",
+                "slug": "adidas",
+                "image": "adidasImg",
+                "family": [
+                    {
+                        "name": "Adidas Campus",
+                        "slug": "adidas-campus",
+                        "image": "adidasCP"
+                    },
+                    {
+                        "name": "Adidas Samba",
+                        "slug": "adidas-samba",
+                        "image": "adidasSB"
+                    },
+                    {
+                        "name": "Adidas Gazelle",
+                        "slug": "adidas-gazelle",
+                        "image": "adidasGZ"
+                    }
+                ]
+            },
+            {
+                "name": "New Balance",
+                "slug": "new-balance",
+                "image": "newBalanceImg",
+                "family": [
+                    {
+                        "name": "New Balance 550",
+                        "slug": "new-balance-550",
+                        "image": "NB550"
+                    },
+                    {
+                        "name": "New Balance 2002R",
+                        "slug": "new-balance-2002r",
+                        "image": "NB2002R"
+                    },
+                    {
+                        "name": "New Balance 9060",
+                        "slug": "new-balance-9060",
+                        "image": "NB9060"
+                    }
+                ]
+            },
+            {
+                "name": "Air Jordan",
+                "slug": "air-jordan",
+                "image": "airjordanImg",
+                "family": [
+                    {
+                        "name": "Air Jordan 1",
+                        "slug": "air-jordan-1",
+                        "image": "AJ1",
+                        "types": [
+                            {
+                                "name": "Low",
+                                "slug": "air-jordan-1-low",
+                                "image": "AJ1Low"
+                            },
+                            {
+                                "name": "Mid",
+                                "slug": "air-jordan-1-mid",
+                                "image": "AJ1Mid"
+                            },
+                            {
+                                "name": "High",
+                                "slug": "air-jordan-1-high",
+                                "image": "AJ1High"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Air Jordan 2",
+                        "slug": "air-jordan-2",
+                        "image": "AJ2"
+                    },
+                    {
+                        "name": "Air Jordan 3",
+                        "slug": "air-jordan-3",
+                        "image": "AJ3"
+                    }
+                ]
+            }
+        ],
+        "image": "sneakerImg"
+    },
+    {
+        "name": "New In",
+        "slug": "new-in"
+    },
+    {
+        "name": "Discover",
+        "slug": "discover"
+    },
+    {
+        "name": "48h Delivery",
+        "slug": "48h-delivery"
+    }
+]

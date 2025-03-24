@@ -1,0 +1,30 @@
+[
+  {
+    "name":"Nike",
+    "brandimg":"NikeBrandImage"
+  },
+  {
+    "name":"Adidas",
+    "brandimg":"AdidasBrandImage"
+  },
+  {
+    "name":"Air Jordan",
+    "brandimg":"AirJordanBrandImage"
+  },
+  {
+    "name":"New Balance",
+    "brandimg":"NewBalanceBrandImage"
+  },
+  {
+    "name":"Yeezy",
+    "brandimg":"YeezyBrandImage"
+  },
+  {
+    "name":"Salomon",
+    "brandimg":"SalomonBrandImage"
+  },
+  {
+    "name":"Asics",
+    "brandimg":"AsicsBrandImage"
+  }
+]
