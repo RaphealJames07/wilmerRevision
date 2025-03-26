@@ -13,7 +13,6 @@ const features = createSlice({
             state.user = payload.user;
             console.log("User Data:", payload);
         },
-
         loginToken: (state, {payload}) => {
             state.userToken = payload;
             console.log("User Token:", payload);

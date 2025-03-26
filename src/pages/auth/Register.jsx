@@ -243,9 +243,9 @@ const Register = () => {
                         {currentState.loading ? "LOADING..." : " SIGN UP"}
                     </button>
                     <p className="w-full h-max flex in-checked: justify-between">
-                        Forget password? click here{" "}
-                        <NavLink to={"/signup"} className="">
-                            Sign Up
+                        Already have an account
+                        <NavLink to={"/login"} className="">
+                            Login 
                         </NavLink>
                     </p>
                 </div>

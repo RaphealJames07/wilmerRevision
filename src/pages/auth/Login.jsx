@@ -68,7 +68,7 @@ const Login = () => {
                 );
                 console.log(response);
                 if (response?.status === 200)
-                    toast.success(`Login Up successfull`);
+                    toast.success(`Login successfull`);
                 dispatch({type: "setLoading", payload: false});
                 reduxDispatch(loginToken(response?.data?.token));
                 reduxDispatch(userData(response?.data?.data));
@@ -95,15 +95,21 @@ const Login = () => {
         if (!currentState.data.email)
             return toast.error("Enter email in the field above");
         else {
+            const loadingId = toast.loading("Requesting...");
             try {
                 const response = await axios.post(
                     `${BASE_URL}/api/v1/users/resendVerification`,
                     {email: currentState.data.email}
                 );
+                toast.dismiss(loadingId);
                 console.log(response);
                 toast.info(response?.data?.message);
+                return;
             } catch (error) {
+                toast.dismiss(loadingId);
+                toast.info(error?.response?.data?.message);
                 console.log(error);
+                return;
             }
         }
     };
@@ -130,7 +136,7 @@ const Login = () => {
                 />
             </div>
             <div className="w-[60%] h-full flex items-center flex-col gap-4 justify-center px-60">
-                <p className="text-3xl font-semibold">Login Up</p>
+                <p className="text-3xl font-semibold">Login</p>
                 <div className="w-full h-max flex flex-col gap-5 mt-10">
                     <input
                         type="email"
@@ -187,7 +193,7 @@ const Login = () => {
                         disabled={currentState.loading}
                         onClick={handleSignup}
                     >
-                        {currentState.loading ? "LOADING..." : " LOGIN UP"}
+                        {currentState.loading ? "LOADING..." : " LOGIN"}
                     </button>
                     <p className="w-full h-max flex in-checked: justify-between">
                         <span>

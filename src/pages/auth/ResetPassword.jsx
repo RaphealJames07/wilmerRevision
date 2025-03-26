@@ -2,29 +2,35 @@ import axios from "axios";
 import {BASE_URL} from "../../constants/constants";
 import {toast} from "react-toastify";
 import {useState} from "react";
-import {useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 // import { useNavigate } from "react-router";
 
 const ResetPassword = () => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate();
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const {token} = useParams();
-    console.log(token)
+    console.log(token);
     const handleResetPassword = async (e) => {
         e.preventDefault();
         if (!password && !confirmPassword)
             return toast.error("You dey craze!!! you no go put password?");
         try {
+            setLoading(true);
             const response = await axios.patch(
                 `${BASE_URL}/api/v1/users/resetPassword/${token}`,
                 {password, confirmPassword}
             );
             console.log(response);
-            if (response?.status === 200)
-                toast.success(`Successfull`);
+            if (response?.status === 200) setLoading(false);
+            toast.success(`Successfull`);
+            setTimeout(() => {
+                navigate("/login");
+            }, 2000);
             return;
         } catch (error) {
+            setLoading(false);
             toast.error(error?.response?.data?.message);
             console.log(error);
             return;
@@ -52,9 +58,10 @@ const ResetPassword = () => {
                 />
                 <button
                     onClick={handleResetPassword}
-                    className="bg-purple-600 text-white p-2 rounded px-4"
+                    className="bg-purple-600 cursor-pointer text-white p-2 rounded px-4 disabled:cursor-not-allowed disabled:bg-purple-200"
+                    disabled={loading}
                 >
-                    SEND
+                    {loading ? "Loading..." : "SEND"}
                 </button>
             </div>
         </>

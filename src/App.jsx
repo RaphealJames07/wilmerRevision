@@ -25,6 +25,7 @@ import ForgetPassword from "./pages/auth/ForgetPassword";
 import ResetPassword from "./pages/auth/ResetPassword";
 
 const App = () => {
+    
     const router = createBrowserRouter([
         {
             path: "",
