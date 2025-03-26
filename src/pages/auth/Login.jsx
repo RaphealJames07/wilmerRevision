@@ -101,7 +101,7 @@ const Login = () => {
                     {email: currentState.data.email}
                 );
                 console.log(response);
-                toast.info(response?.data?.message)
+                toast.info(response?.data?.message);
             } catch (error) {
                 console.log(error);
             }
@@ -190,15 +190,23 @@ const Login = () => {
                         {currentState.loading ? "LOADING..." : " LOGIN UP"}
                     </button>
                     <p className="w-full h-max flex in-checked: justify-between">
-                        Forget password? click here{" "}
-                        <NavLink to={"/signup"} className="">
+                        <span>
+                            Forget password? click here{" "}
+                            <NavLink to={"/forget-password"}>reset</NavLink>
+                        </span>
+                        <NavLink to={"/register"} className="">
                             Sign Up
                         </NavLink>
                     </p>
                     {isResend && (
                         <p>
                             Do you wish to get verification link? click{" "}
-                            <span onClick={handleResendVerify} className="text-2xl px-2 text-blue-500 cursor-pointer">here</span>
+                            <span
+                                onClick={handleResendVerify}
+                                className="text-2xl px-2 text-blue-500 cursor-pointer"
+                            >
+                                here
+                            </span>
                         </p>
                     )}
                 </div>
