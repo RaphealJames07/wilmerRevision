@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     user: {},
-    userToken: "user dey",
+    userToken: "",
 };
 
 const features = createSlice({
