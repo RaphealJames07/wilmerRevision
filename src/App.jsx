@@ -45,7 +45,7 @@ const App = () => {
                     element: <Checkout />,
                 },
                 {
-                    path: "payment-verify",
+                    path: "verify-payment",
                     element: <PaymentVerify />,
                 },
                 {

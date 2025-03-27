@@ -1,11 +1,14 @@
 // import { useParams } from "react-router"
 
 import {Collapse, Drawer, Input, Pagination, Select} from "antd";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "./collection.css";
 import MilitaryBlue from "../../assets/sneakers/air-jordan-4-sail-metallic-gold3.webp";
 import fortycard from "../../assets/new-picto-48h.svg";
 import HomeTopTag1 from "../home/components/HomeTopTag1";
+import axios from "axios";
+import {BASE_URL} from "../../constants/constants";
+import {useNavigate} from "react-router";
 
 const items = [
     {
@@ -224,7 +227,26 @@ const items = [
 
 const DynamicCollectionsHome = () => {
     // const {slug} = useParams()
+    const navigate = useNavigate();
     const [openFilter, setOpenFilter] = useState(false);
+    const [product, setProduct] = useState([]);
+
+    const handleGetAllProducts = async () => {
+        try {
+            const response = await axios.get(
+                `${BASE_URL}/api/v1/product/getAllProduct`
+            );
+            setProduct(response?.data?.data?.products);
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        handleGetAllProducts();
+    }, []);
+
     return (
         <>
             <div className="w-full h-max phone:mt-16 px-32 phone:px-4 pt-10 flex flex-col gap-8">
@@ -257,178 +279,40 @@ const DynamicCollectionsHome = () => {
                     </div>
                 </div>
                 <div className="styles_ProductGrid phone:grid-cols-6">
-                    <div className="styles_card__GmAAu">
-                        <div>
-                            <div className="w-full h-auto relative bg-[#f5f5f5]  mb-3">
-                                <span className="w-max h-max absolute right-3 top-3">
-                                    <img src={fortycard} alt="" />
-                                </span>
-                                <img
-                                    src={MilitaryBlue}
-                                    alt=""
-                                    className="h-80 object-contain phone:h-44"
-                                />
+                    <>
+                        {product.map((item, index) => (
+                            <div
+                                className="styles_card__GmAAu"
+                                key={index}
+                                onClick={() =>
+                                    navigate(`/products/${item?._id}`)
+                                }
+                            >
+                                <div>
+                                    <div className="w-full h-auto relative bg-[#f5f5f5]  mb-3">
+                                        <span className="w-max h-max absolute right-3 top-3">
+                                            <img src={fortycard} alt="" />
+                                        </span>
+                                        <img
+                                            src={item.images[0]}
+                                            alt=""
+                                            className="h-80 object-contain phone:h-44"
+                                        />
+                                    </div>
+                                    <p className="font-medium text-sm">
+                                        {item.productName}
+                                    </p>
+                                    <p className="font-light text-[#4d4d4d] text-sm">
+                                        From ₦{item.basePrice}
+                                    </p>
+                                </div>
                             </div>
-                            <p className="font-medium text-sm">
-                                Nike metallic blue
-                            </p>
-                            <p className="font-light text-[#4d4d4d] text-sm">
-                                From $110
-                            </p>
-                        </div>
-                    </div>
-                    <div className="styles_card__GmAAu">
-                        <div>
-                            <div className="w-full h-auto relative bg-[#f5f5f5]  mb-3">
-                                <span className="w-max h-max absolute right-3 top-3">
-                                    <img src={fortycard} alt="" />
-                                </span>
-                                <img
-                                    src={MilitaryBlue}
-                                    alt=""
-                                    className="h-80 object-contain phone:h-44"
-                                />
-                            </div>
-                            <p className="font-medium text-sm">
-                                Nike metallic blue
-                            </p>
-                            <p className="font-light text-[#4d4d4d] text-sm">
-                                From $110
-                            </p>
-                        </div>
-                    </div>
+                        ))}
+                    </>
                     <a
                         href="/collections/adidas"
                         className="styles_LifestyleCard__uWrg_"
                     ></a>
-                    <div className="styles_card__GmAAu">
-                        <div>
-                            <div className="w-full h-auto relative bg-[#f5f5f5]  mb-3">
-                                <span className="w-max h-max absolute right-3 top-3">
-                                    <img src={fortycard} alt="" />
-                                </span>
-                                <img
-                                    src={MilitaryBlue}
-                                    alt=""
-                                    className="h-80 object-contain phone:h-44"
-                                />
-                            </div>
-                            <p className="font-medium text-sm">
-                                Nike metallic blue
-                            </p>
-                            <p className="font-light text-[#4d4d4d] text-sm">
-                                From $110
-                            </p>
-                        </div>
-                    </div>
-                    <div className="styles_card__GmAAu">
-                        <div>
-                            <div className="w-full h-auto relative bg-[#f5f5f5]  mb-3">
-                                <span className="w-max h-max absolute right-3 top-3">
-                                    <img src={fortycard} alt="" />
-                                </span>
-                                <img
-                                    src={MilitaryBlue}
-                                    alt=""
-                                    className="h-80 object-contain phone:h-44"
-                                />
-                            </div>
-                            <p className="font-medium text-sm">
-                                Nike metallic blue
-                            </p>
-                            <p className="font-light text-[#4d4d4d] text-sm">
-                                From $110
-                            </p>
-                        </div>
-                    </div>
-                    <div className="styles_card__GmAAu">
-                        <div>
-                            <div className="styles_image__djB6m">
-                                <div className="w-max h-max absolute right-3 top-3">
-                                    <img src={fortycard} alt="" />
-                                </div>
-                                <div className="styles_Image__ySdAW">
-                                    <img
-                                        src={MilitaryBlue}
-                                        alt=""
-                                        className="h-80 object-contain phone:h-44"
-                                    />
-                                </div>
-                            </div>
-                            <p className="font-medium text-sm">
-                                Nike metallic blue
-                            </p>
-                            <p className="font-light text-[#4d4d4d] text-sm">
-                                From $110
-                            </p>
-                        </div>
-                    </div>
-                    <div className="styles_card__GmAAu">
-                        <div>
-                            <div className="styles_image__djB6m">
-                                <div className="w-max h-max absolute right-3 top-3">
-                                    <img src={fortycard} alt="" />
-                                </div>
-                                <div className="styles_Image__ySdAW">
-                                    <img
-                                        src={MilitaryBlue}
-                                        alt=""
-                                        className="h-80 object-contain phone:h-44"
-                                    />
-                                </div>
-                            </div>
-                            <p className="font-medium text-sm">
-                                Nike metallic blue
-                            </p>
-                            <p className="font-light text-[#4d4d4d] text-sm">
-                                From $110
-                            </p>
-                        </div>
-                    </div>
-                    <div className="styles_card__GmAAu">
-                        <div>
-                            <div className="styles_image__djB6m">
-                                <div className="w-max h-max absolute right-3 top-3">
-                                    <img src={fortycard} alt="" />
-                                </div>
-                                <div className="styles_Image__ySdAW">
-                                    <img
-                                        src={MilitaryBlue}
-                                        alt=""
-                                        className="h-80 object-contain phone:h-44"
-                                    />
-                                </div>
-                            </div>
-                            <p className="font-medium text-sm">
-                                Nike metallic blue
-                            </p>
-                            <p className="font-light text-[#4d4d4d] text-sm">
-                                From $110
-                            </p>
-                        </div>
-                    </div>
-                    <div className="styles_card__GmAAu">
-                        <div>
-                            <div className="styles_image__djB6m">
-                                <div className="w-max h-max absolute right-3 top-3">
-                                    <img src={fortycard} alt="" />
-                                </div>
-                                <div className="styles_Image__ySdAW">
-                                    <img
-                                        src={MilitaryBlue}
-                                        alt=""
-                                        className="h-80 object-contain phone:h-44"
-                                    />
-                                </div>
-                            </div>
-                            <p className="font-medium text-sm">
-                                Nike metallic blue
-                            </p>
-                            <p className="font-light text-[#4d4d4d] text-sm">
-                                From $110
-                            </p>
-                        </div>
-                    </div>
                 </div>
                 <div className="w-full h-20 flex items-center justify-center">
                     <Pagination />

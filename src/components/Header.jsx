@@ -112,7 +112,7 @@ const Header = () => {
                         </div>
                         <div className="w-max h-full flex items-center gap-8 phone:hidden">
                             <div className="w-max h-max cursor-pointer">
-                                <Link to={`/account/my-orders`}>
+                                <Link to={`/account/user-profile`}>
                                     <CiUser size={20} />
                                 </Link>
                             </div>

@@ -6,7 +6,7 @@ import axios from "axios";
 import {BASE_URL} from "../../constants/constants";
 import {toast} from "react-toastify";
 import {useDispatch} from "react-redux";
-import {loginToken, userData} from "../../global/features";
+import {loginToken, saveUserData} from "../../global/features";
 
 const Login = () => {
     const initialState = {
@@ -71,7 +71,7 @@ const Login = () => {
                     toast.success(`Login successfull`);
                 dispatch({type: "setLoading", payload: false});
                 reduxDispatch(loginToken(response?.data?.token));
-                reduxDispatch(userData(response?.data?.data));
+                reduxDispatch(saveUserData(response?.data?.data));
                 setTimeout(() => {
                     navigate("/");
                 }, 2000);

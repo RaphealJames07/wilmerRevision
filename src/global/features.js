@@ -3,15 +3,20 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     user: {},
     userToken: "",
+    address:[],
 };
 
 const features = createSlice({
     name: "wilmer-revision",
     initialState,
     reducers: {
-        userData: (state, {payload}) => {
+        saveUserData: (state, {payload}) => {
             state.user = payload.user;
             console.log("User Data:", payload);
+        },
+        saveAddress: (state, {payload}) => {
+            state.address = payload;
+            console.log("Address:", payload);
         },
         loginToken: (state, {payload}) => {
             state.userToken = payload;
@@ -24,6 +29,6 @@ const features = createSlice({
     },
 });
 
-export const {userData, logout, loginToken} = features.actions;
+export const {saveUserData, logout, loginToken,saveAddress} = features.actions;
 
 export default features.reducer;

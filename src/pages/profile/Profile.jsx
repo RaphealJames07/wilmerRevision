@@ -10,9 +10,12 @@ import {NavLink, Outlet} from "react-router";
 import {PiUserCircleThin} from "react-icons/pi";
 import {Drawer} from "antd";
 import {useState} from "react";
+import {useSelector} from "react-redux";
 
 const Profile = () => {
     const [openMenu, setOpenMenu] = useState(false);
+    const user = useSelector((state) => state.user);
+
     return (
         <div className="w-full h-max flex phone:flex-col phone:gap-2 phone:mt-16 pt-10 px-6 phone:px-2 phone:pt-0">
             <div
@@ -26,7 +29,7 @@ const Profile = () => {
                 <div className="w-full h-max flex gap-3">
                     <img src="Logo" alt="Logo" />
                     <p className="w-max h-max flex flex-col text-2xl font-medium">
-                        Welcome <span>Rapheal</span>
+                        Welcome <span>{`${user?.firstName} ${user?.lastName}`}</span>
                     </p>
                 </div>
                 <div className="w-full h-max flex flex-col gap-4 text-sm">
@@ -117,7 +120,7 @@ const Profile = () => {
                     <div className="w-full h-max flex gap-3">
                         <img src="Logo" alt="Logo" />
                         <p className="w-max h-max flex flex-col text-2xl font-medium">
-                            Welcome <span>Rapheal</span>
+                            Welcome <span>{`${user?.firstName} ${user?.lastName}`}</span>
                         </p>
                     </div>
                     <div className="w-full h-max flex flex-col gap-4 text-sm">
@@ -199,6 +202,7 @@ const Profile = () => {
                     </div>
                 </div>
             </Drawer>
+           
         </div>
     );
 };
